@@ -1,7 +1,8 @@
 const express = require('express');
 const format = require('date-format');
 const app = express();
-const port = 8080;
+
+const PORT = process.env.PORT || 8080;
 
 app.get('/', (req, res) => {
     res.status(200).send("<h1>Hello from Valeraaa 2024 yesssss!</h1>");
