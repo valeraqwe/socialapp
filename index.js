@@ -1,11 +1,11 @@
-const express = require('express')
-const format = require('date-format')
-const app = express()
-const port = 8080
+const express = require('express');
+const format = require('date-format');
+const app = express();
+const port = 8080;
 
 app.get('/', (req, res) => {
-    res.status(200).send("<h1>Hello from Valeraaa 2024 yesssss!</h1>")
-})
+    res.status(200).send("<h1>Hello from Valeraaa 2024 yesssss!</h1>");
+});
 
 app.get("/api/v1/facebook", (req, res) => {
     const instaSocial = {
@@ -38,6 +38,11 @@ app.get("/api/v1/linkedin", (req, res) => {
     };
 
     res.status(200).json(instaSocial);
+});
+
+app.get("/api/v1/:token", (req, res) => {
+    console.log(req.params.token);
+    res.status(200).json({param: req.params.token});
 });
 
 app.listen(port, () => {
