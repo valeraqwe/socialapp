@@ -13,7 +13,7 @@ app.get("/api/v1/facebook", (req, res) => {
         username: "valerafb",
         followers: 33,
         follows: 11,
-        date: format.asString("dd[MM] - :hh:mm:ss", new Date())
+        date: format.asString("yyyy-MM-dd.", new Date())
     };
 
     res.status(200).json(facebookData);
@@ -24,7 +24,7 @@ app.get("/api/v1/instagram", (req, res) => {
         username: "valerainsta",
         followers: 239,
         follows: 118,
-        date: format.asString("dd[MM] - :hh:mm:ss", new Date())
+        date: format.asString("yyyy-MM-dd.", new Date())
     };
 
     res.status(200).json(instagramData);
