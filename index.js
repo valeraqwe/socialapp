@@ -9,43 +9,44 @@ app.get('/', (req, res) => {
 });
 
 app.get("/api/v1/facebook", (req, res) => {
-    const instaSocial = {
+    const facebookData = {
         username: "valerafb",
         followers: 33,
         follows: 11,
         date: format.asString("dd[MM] - :hh:mm:ss", new Date())
     };
 
-    res.status(200).json(instaSocial);
+    res.status(200).json(facebookData);
 });
 
 app.get("/api/v1/instagram", (req, res) => {
-    const instaSocial = {
+    const instagramData = {
         username: "valerainsta",
         followers: 239,
         follows: 118,
         date: format.asString("dd[MM] - :hh:mm:ss", new Date())
     };
 
-    res.status(200).json(instaSocial);
+    res.status(200).json(instagramData);
 });
 
 app.get("/api/v1/linkedin", (req, res) => {
-    const instaSocial = {
+    const linkedinData = {
         username: "valeralk",
         followers: 3,
         follows: 3,
         date: format.asString("yyyy-MM-dd.", new Date())
     };
 
-    res.status(200).json(instaSocial);
+    res.status(200).json(linkedinData);
 });
 
 app.get("/api/v1/:token", (req, res) => {
-    console.log(req.params.token);
-    res.status(200).json({param: req.params.token});
+    const token = req.params.token;
+    console.log(token);
+    res.status(200).json({ param: token });
 });
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+app.listen(PORT, () => {
+    console.log(`Example app listening on port ${PORT}`);
+});
