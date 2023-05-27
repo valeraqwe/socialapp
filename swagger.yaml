@@ -1,1 +1,20 @@
 openapi: 3.0.0
+info:
+  title: Social App
+  description: Our first Social App by Valera Komar
+  version: 1.0.1
+
+servers:
+  - url: http://localhost:8080/api/v1
+    description: localhost version of my app
+  - url: https://localhost:8080/api/v1
+    description: this is just a dummy api url, it doesnt work
+
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+    BearerAuth:
+      type: http
+      scheme: bearer
